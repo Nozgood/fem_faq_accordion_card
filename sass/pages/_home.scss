@@ -1,0 +1,81 @@
+body {
+    width: 375x;
+    height: 800px;
+    background: linear-gradient($first-radient-color, $second-radient-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+hr {
+    color: hsl(240, 5%, 91%);
+    border-style: solid;
+    border-width: 0.5px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+
+    &__visual {
+
+        &-img {
+            width: 65%;
+            position: absolute;
+            top: 9%;
+        }
+        &-bg {
+            position: absolute;
+            top: 22%;
+            width: 65%;
+        }
+    }
+    &__content {
+
+        &-title {
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        &-questions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 250px;
+
+            &:hover {
+                font-weight: bold;
+                animation-name: descente;
+                animation-duration: 500ms;
+
+                .card__content-questions--arrow {
+                    transform: rotate(180deg);
+                    transition: all 300ms ease-in;
+                }
+            }
+
+            &--text {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@keyframes descente {
+    from {
+        padding-bottom: 0;
+    } to {
+        padding-bottom: 80px;
+    }
+}

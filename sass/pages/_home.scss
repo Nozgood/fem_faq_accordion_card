@@ -49,33 +49,50 @@ hr {
         }
 
         &-questions {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 250px;
+            height: 40px;
+            overflow: hidden;
 
             &:hover {
-                font-weight: bold;
-                animation-name: descente;
-                animation-duration: 500ms;
+                height: 100px;
 
-                .card__content-questions--arrow {
-                    transform: rotate(180deg);
-                    transition: all 300ms ease-in;
+                .card {
+                    width: 800px;
+                }
+            }
+    
+            &--visible {
+                display: flex;
+                align-items: baseline;
+                justify-content: space-between;
+                width: 250px;
+
+                &:hover {
+                    .card__content-questions--visible-arrow {
+                        transform: rotate(180deg);
+                        transition: all 300ms ease-in;
+                    }
+                }
+    
+                &-text {
+                    font-size: 12px;
+                    color: hsl(238, 29%, 16%);
+                    margin-block-end: 0;
+
+                    &:hover {
+                        color: hsl(14, 88%, 65%);
+                    }
                 }
             }
 
-            &--text {
-                font-size: 12px;
+            &--invisible {
+                width: 250px;
+
+                &-text {
+                    font-size: 12px;
+                    width: 98%;
+                    color: hsl(240, 6%, 50%);
+                }
             }
         }
-    }
-}
-
-@keyframes descente {
-    from {
-        padding-bottom: 0;
-    } to {
-        padding-bottom: 80px;
     }
 }
